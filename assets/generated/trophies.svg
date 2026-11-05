@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="165" viewBox="0 0 1000 165">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#b517ff"/></linearGradient>
+  <linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e93" stop-opacity="0.45"/><stop offset="1" stop-color="#ff2e93" stop-opacity="0"/></linearGradient>
+  <filter id="n" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  
+</defs>
+<style>.t{font:600 15px 'Segoe UI','Helvetica Neue',Arial,sans-serif;letter-spacing:3px;fill:#ff2e93} .l{font:400 14px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#8a8a95} .v{font:700 15px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#ffffff} .s{font:400 11px 'Courier New',Consolas,monospace;fill:#8a8a95;letter-spacing:1px}</style>
+<rect x="1" y="1" width="998" height="163" rx="12" fill="#0d0d0f" stroke="#ff2e93" stroke-opacity="0.55" stroke-width="1.5"/>
+
+<text class="t" x="28" y="40">TROPHÉES</text>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.00s" fill="freeze"/>
+<path d="M100.0 55.0 L134.6 75.0 L134.6 115.0 L100.0 135.0 L65.4 115.0 L65.4 75.0Z" fill="none" fill-opacity="0.08" stroke="#2a2a32" stroke-width="3">
+</path>
+<text x="100" y="102" text-anchor="middle" style="font:800 20px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#4a4a55">—</text>
+<text class="s" x="100" y="157" text-anchor="middle" style="fill:#8a8a95">COMMITS</text>
+<circle cx="88" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="100" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="112" cy="169" r="3" fill="#1c1c22"/>
+</g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.15s" fill="freeze"/>
+<path d="M300.0 55.0 L334.6 75.0 L334.6 115.0 L300.0 135.0 L265.4 115.0 L265.4 75.0Z" fill="none" fill-opacity="0.08" stroke="#2a2a32" stroke-width="3">
+</path>
+<text x="300" y="102" text-anchor="middle" style="font:800 20px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#4a4a55">—</text>
+<text class="s" x="300" y="157" text-anchor="middle" style="fill:#8a8a95">PULL REQ.</text>
+<circle cx="288" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="300" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="312" cy="169" r="3" fill="#1c1c22"/>
+</g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.30s" fill="freeze"/>
+<path d="M500.0 55.0 L534.6 75.0 L534.6 115.0 L500.0 135.0 L465.4 115.0 L465.4 75.0Z" fill="none" fill-opacity="0.08" stroke="#2a2a32" stroke-width="3">
+</path>
+<text x="500" y="102" text-anchor="middle" style="font:800 20px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#4a4a55">—</text>
+<text class="s" x="500" y="157" text-anchor="middle" style="fill:#8a8a95">REPOS</text>
+<circle cx="488" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="500" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="512" cy="169" r="3" fill="#1c1c22"/>
+</g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.45s" fill="freeze"/>
+<path d="M700.0 55.0 L734.6 75.0 L734.6 115.0 L700.0 135.0 L665.4 115.0 L665.4 75.0Z" fill="none" fill-opacity="0.08" stroke="#2a2a32" stroke-width="3">
+</path>
+<text x="700" y="102" text-anchor="middle" style="font:800 20px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#4a4a55">—</text>
+<text class="s" x="700" y="157" text-anchor="middle" style="fill:#8a8a95">ÉTOILES</text>
+<circle cx="688" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="700" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="712" cy="169" r="3" fill="#1c1c22"/>
+</g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.60s" fill="freeze"/>
+<path d="M900.0 55.0 L934.6 75.0 L934.6 115.0 L900.0 135.0 L865.4 115.0 L865.4 75.0Z" fill="none" fill-opacity="0.08" stroke="#2a2a32" stroke-width="3">
+</path>
+<text x="900" y="102" text-anchor="middle" style="font:800 20px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#4a4a55">—</text>
+<text class="s" x="900" y="157" text-anchor="middle" style="fill:#8a8a95">FOLLOWERS</text>
+<circle cx="888" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="900" cy="169" r="3" fill="#1c1c22"/>
+<circle cx="912" cy="169" r="3" fill="#1c1c22"/>
+</g>
+</svg>

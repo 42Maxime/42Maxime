@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="215" viewBox="0 0 480 215">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#b517ff"/></linearGradient>
+  <linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2e93" stop-opacity="0.45"/><stop offset="1" stop-color="#ff2e93" stop-opacity="0"/></linearGradient>
+  <filter id="n" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  
+</defs>
+<style>.t{font:600 15px 'Segoe UI','Helvetica Neue',Arial,sans-serif;letter-spacing:3px;fill:#ff2e93} .l{font:400 14px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#8a8a95} .v{font:700 15px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#ffffff} .s{font:400 11px 'Courier New',Consolas,monospace;fill:#8a8a95;letter-spacing:1px}</style>
+<rect x="1" y="1" width="478" height="213" rx="12" fill="#0d0d0f" stroke="#ff2e93" stroke-opacity="0.55" stroke-width="1.5"/>
+
+<text class="t" x="28" y="40">GITHUB STATS</text>
+<rect x="28" y="50" width="60" height="2" rx="1" fill="url(#g)"/>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.00s" fill="freeze"/><text class="l" x="28" y="84">Commits (12 mois)</text><text class="v" x="290" y="84" text-anchor="end">—</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.12s" fill="freeze"/><text class="l" x="28" y="110">Pull requests</text><text class="v" x="290" y="110" text-anchor="end">—</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.24s" fill="freeze"/><text class="l" x="28" y="136">Issues</text><text class="v" x="290" y="136" text-anchor="end">—</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.36s" fill="freeze"/><text class="l" x="28" y="162">Étoiles reçues</text><text class="v" x="290" y="162" text-anchor="end">—</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.48s" fill="freeze"/><text class="l" x="28" y="188">Repos publics</text><text class="v" x="290" y="188" text-anchor="end">—</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.60s" fill="freeze"/><text class="l" x="28" y="214">Followers</text><text class="v" x="290" y="214" text-anchor="end">—</text></g>
+<g transform="translate(390 118)">
+  <circle r="44" fill="none" stroke="#1c1c22" stroke-width="8"/>
+  <circle r="44" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="276.5" transform="rotate(-90)" filter="url(#n)">
+    <animate attributeName="stroke-dashoffset" from="276.5" to="265.4" dur="1.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
+  </circle>
+  <text y="12" text-anchor="middle" style="font:800 34px 'Segoe UI','Helvetica Neue',Arial,sans-serif;fill:#ffffff">?</text>
+  <text y="64" text-anchor="middle" class="s">NIVEAU</text>
+</g></svg>

@@ -27,10 +27,6 @@
   <style>
     .name{font:800 92px 'Segoe UI','Helvetica Neue',Arial,sans-serif;letter-spacing:14px}
     .sub{font:600 17px 'Courier New',monospace;letter-spacing:7px}
-    .gl1{animation:g1 3.2s infinite steps(1)}
-    .gl2{animation:g2 3.2s infinite steps(1)}
-    @keyframes g1{0%,88%,100%{transform:translate(0,0);opacity:0}90%{transform:translate(-5px,2px);opacity:.8}94%{transform:translate(4px,-2px);opacity:.8}97%{transform:translate(-2px,0);opacity:.6}}
-    @keyframes g2{0%,88%,100%{transform:translate(0,0);opacity:0}91%{transform:translate(5px,-2px);opacity:.8}95%{transform:translate(-4px,2px);opacity:.8}98%{transform:translate(2px,0);opacity:.6}}
     .blink{animation:bl 1s infinite steps(1)}
     @keyframes bl{0%,50%{opacity:1}51%,100%{opacity:0}}
   </style>
@@ -56,11 +52,9 @@
     <g fill="none" stroke="#ff2e93" stroke-width="2.5" stroke-linecap="round" opacity="0.9">
       <path d="M30 70V30H70"/><path d="M930 30H970V70"/><path d="M30 210V250H70"/><path d="M970 210V250H930"/>
     </g>
-    <text class="name gl1" x="500" y="145" text-anchor="middle" fill="#ff2e93">DAABZFN</text>
-    <text class="name gl2" x="500" y="145" text-anchor="middle" fill="#7a00ff">DAABZFN</text>
     <text class="name" x="500" y="145" text-anchor="middle" fill="url(#g)" filter="url(#neon)">DAABZFN</text>
     <rect x="320" y="167" width="360" height="2" rx="1" fill="url(#g)"/>
-    <text class="sub" x="500" y="205" text-anchor="middle" fill="#ffffff" fill-opacity="0.8">DEV &#8226; CREATIVE CODER<tspan class="blink" fill="#ff2e93">_</tspan></text>
+    <text class="sub" x="500" y="205" text-anchor="middle" fill="#ffffff" fill-opacity="0.8">STUDENT @ 42 &#8226; COMMON CORE<tspan class="blink" fill="#ff2e93">_</tspan></text>
   </g>
   <rect x="1" y="1" width="998" height="278" rx="18" fill="none" stroke="#ff2e93" stroke-opacity="0.45" stroke-width="2"/>
 </svg>
