@@ -106,7 +106,7 @@ def fmt(v):
 def card_stats(d):
     rows = [("Commits (12 mois)", "commits"), ("Pull requests", "prs"), ("Issues", "issues"),
             ("Étoiles reçues", "stars"), ("Repos publics", "repos"), ("Followers", "followers")]
-    out = [head(480, 215), '<text class="t" x="28" y="40">GITHUB STATS</text>',
+    out = [head(480, 235), '<text class="t" x="28" y="40">GITHUB STATS</text>',
            f'<rect x="28" y="50" width="60" height="2" rx="1" fill="url(#g)"/>']
     for i, (label, key) in enumerate(rows):
         y = 84 + i * 26
@@ -120,7 +120,7 @@ def card_stats(d):
     letter = next(l for t, l in tiers if score >= t) if d else "?"
     pct = max(0.04, min(score / 1000, 1)) if d else 0.04
     r = 44; c = 2 * math.pi * r
-    out.append(f'''<g transform="translate(390 118)">
+    out.append(f'''<g transform="translate(390 124)">
   <circle r="{r}" fill="none" stroke="{TRACK}" stroke-width="8"/>
   <circle r="{r}" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-dasharray="{c:.1f}" stroke-dashoffset="{c:.1f}" transform="rotate(-90)" filter="url(#n)">
     <animate attributeName="stroke-dashoffset" from="{c:.1f}" to="{c*(1-pct):.1f}" dur="1.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
@@ -132,7 +132,7 @@ def card_stats(d):
 
 
 def card_langs(d):
-    out = [head(480, 215), '<text class="t" x="28" y="40">TOP LANGAGES</text>',
+    out = [head(480, 235), '<text class="t" x="28" y="40">TOP LANGAGES</text>',
            f'<rect x="28" y="50" width="60" height="2" rx="1" fill="url(#g)"/>']
     langs = d["langs"][:6] if d else []
     if not langs:
@@ -194,7 +194,7 @@ def hexpath(cx, cy, r):
 def card_badges(d):
     items = [("COMMITS", "commits", [1, 50, 300]), ("PULL REQ.", "prs", [1, 5, 20]), ("REPOS", "repos", [1, 5, 15]),
              ("ÉTOILES", "stars", [1, 5, 25]), ("FOLLOWERS", "followers", [1, 5, 20])]
-    W, H = 1000, 165
+    W, H = 1000, 190
     out = [head(W, H), '<text class="t" x="28" y="40">TROPHÉES</text>']
     for i, (label, key, th) in enumerate(items):
         cx, cy = 100 + i * 200, 95
