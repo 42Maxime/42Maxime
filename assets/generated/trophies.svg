@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 180" width="1000" height="180" font-family="Consolas, monospace">
+<title>Trophées et progression</title>
+<rect x="0" y="0" width="1000" height="180" rx="10" fill="#292831"/>
+<rect x="1" y="1" width="998" height="178" rx="9" fill="#0d0d0f"/>
+<rect x="0" y="20" width="4" height="20" rx="0" fill="#ff2e93"/>
+<text x="24" y="34" fill="#ff2e93" font-size="18" font-weight="700" text-anchor="start">$</text>
+<text x="48" y="34" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">./trophées</text>
+<rect x="24" y="50" width="952" height="1" rx="0" fill="#302c37"/>
+<text x="976" y="34" fill="#8a8a95" font-size="14" font-weight="400" text-anchor="end">3 paliers par trophée</text>
+<path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(24 72) scale(2)" fill="#ff9be0" fill-rule="evenodd"/>
+<text x="64" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">9</text>
+<text x="24" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Commits</text>
+<rect x="24" y="147" width="42" height="5" rx="1" fill="#ff9be0"/>
+<rect x="72" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="120" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(216 72) scale(2)" fill="#8a8a95" fill-rule="evenodd"/>
+<text x="256" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">0</text>
+<text x="216" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Pull requests</text>
+<rect x="216" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="264" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="312" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(408 72) scale(2)" fill="#ff9be0" fill-rule="evenodd"/>
+<text x="448" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">2</text>
+<text x="408" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Dépôts</text>
+<rect x="408" y="147" width="42" height="5" rx="1" fill="#ff9be0"/>
+<rect x="456" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="504" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(600 72) scale(2)" fill="#8a8a95" fill-rule="evenodd"/>
+<text x="640" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">0</text>
+<text x="600" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Étoiles</text>
+<rect x="600" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="648" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="696" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(792 72) scale(2)" fill="#8a8a95" fill-rule="evenodd"/>
+<text x="832" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">0</text>
+<text x="792" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Followers</text>
+<rect x="792" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="840" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+<rect x="888" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
+</svg>

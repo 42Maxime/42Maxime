@@ -7,7 +7,8 @@ Usage :
   python scripts/generate_stats.py --demo    # fausses données (test du rendu)
 Aucune dépendance externe (stdlib uniquement).
 """
-import json, math, os, sys, urllib.request
+from xml.sax.saxutils import escape
+import json, os, sys, urllib.request
 from datetime import date
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "generated")
@@ -80,140 +81,106 @@ def demo(user):
     }
 
 
-# ---------- helpers ----------
-def head(w, h, extra=""):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">
-<defs>
-  <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{PINK}"/><stop offset="1" stop-color="{VIOLET}"/></linearGradient>
-  <linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{PINK}" stop-opacity="0.45"/><stop offset="1" stop-color="{PINK}" stop-opacity="0"/></linearGradient>
-  <filter id="n" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  {extra}
-</defs>
-<style>.t{{font:600 15px {SANS};letter-spacing:3px;fill:{PINK}}} .l{{font:400 14px {SANS};fill:{MUTED}}} .v{{font:700 15px {SANS};fill:{TEXT}}} .s{{font:400 11px {MONO};fill:{MUTED};letter-spacing:1px}}</style>
-<rect x="1" y="1" width="{w-2}" height="{h-2}" rx="12" fill="{BG}" stroke="{PINK}" stroke-opacity="0.55" stroke-width="1.5"/>
-'''
+def label(x, y, value, size=15, color=TEXT, anchor="start", bold=False):
+    weight = 700 if bold else 400
+    return (f'<text x="{x}" y="{y}" fill="{color}" font-size="{size}" '
+            f'font-weight="{weight}" text-anchor="{anchor}">{escape(str(value))}</text>')
 
 
-def fade(i, step=0.12):
-    return f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="{i*step:.2f}s" fill="freeze"/>'
+def rect(x, y, w, h, color, radius=0):
+    return f'<rect x="{x:g}" y="{y:g}" width="{w:g}" height="{h:g}" rx="{radius}" fill="{color}"/>'
+
+
+def panel(w, h, command, title):
+    return [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" font-family="Consolas, monospace">',
+            f'<title>{title}</title>', rect(0, 0, w, h, "#292831", 10),
+            rect(1, 1, w-2, h-2, BG, 9), rect(0, 20, 4, 20, PINK),
+            label(24, 34, "$", 18, PINK, bold=True), label(48, 34, command, 17),
+            rect(24, 50, w-48, 1, "#302c37")]
 
 
 def fmt(v):
-    return "—" if v is None else (f"{v/1000:.1f}k" if v >= 10000 else f"{v:,}".replace(",", " "))
+    return "—" if v is None else f"{v:,}".replace(",", " ")
 
 
-# ---------- cartes ----------
 def card_stats(d):
-    rows = [("Commits (12 mois)", "commits"), ("Pull requests", "prs"), ("Issues", "issues"),
-            ("Étoiles reçues", "stars"), ("Repos publics", "repos"), ("Followers", "followers")]
-    out = [head(480, 235), '<text class="t" x="28" y="40">GITHUB STATS</text>',
-           f'<rect x="28" y="50" width="60" height="2" rx="1" fill="url(#g)"/>']
-    for i, (label, key) in enumerate(rows):
-        y = 84 + i * 26
-        v = d[key] if d else None
-        out.append(f'<g opacity="0">{fade(i)}<text class="l" x="28" y="{y}">{label}</text>'
-                   f'<text class="v" x="290" y="{y}" text-anchor="end">{fmt(v)}</text></g>')
-    score = 0
-    if d:
-        score = d["commits"] + 3 * d["prs"] + 2 * d["issues"] + 4 * d["stars"] + 2 * d["followers"] + 2 * d["repos"]
-    tiers = [(2000, "S"), (800, "A"), (300, "B"), (100, "C"), (0, "D")]
-    letter = next(l for t, l in tiers if score >= t) if d else "?"
-    pct = max(0.04, min(score / 1000, 1)) if d else 0.04
-    r = 44; c = 2 * math.pi * r
-    out.append(f'''<g transform="translate(390 124)">
-  <circle r="{r}" fill="none" stroke="{TRACK}" stroke-width="8"/>
-  <circle r="{r}" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round" stroke-dasharray="{c:.1f}" stroke-dashoffset="{c:.1f}" transform="rotate(-90)" filter="url(#n)">
-    <animate attributeName="stroke-dashoffset" from="{c:.1f}" to="{c*(1-pct):.1f}" dur="1.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
-  </circle>
-  <text y="12" text-anchor="middle" style="font:800 34px {SANS};fill:{TEXT}">{letter}</text>
-  <text y="64" text-anchor="middle" class="s">NIVEAU</text>
-</g></svg>''')
-    return "\n".join(out)
+    out = panel(480, 240, "cat stats.c", "Statistiques GitHub")
+    out.extend([label(24, 76, "t_profil", 18, PINK2),
+                label(125, 76, "github = {", 18)])
+    fields = [("commits", "commits"), ("pull_requests", "prs"), ("issues", "issues"),
+              ("repos_publics", "repos"), ("etoiles", "stars"), ("followers", "followers")]
+    for i, (field, key) in enumerate(fields):
+        y = 100 + i*21
+        value = str(d[key]) if d else "?"
+        out.extend([label(48, y, "." + field, 17),
+                    label(211, y, "=", 17, MUTED),
+                    label(239, y, value + ",", 17, PINK2, bold=True)])
+        if i in (0, 3):
+            out.append(label(337, y, "/* 12 mois */" if i == 0 else "/* profil */", 14, MUTED))
+    out.append(label(24, 229, "};", 18))
+    return "\n".join(out + ["</svg>"])
 
 
 def card_langs(d):
-    out = [head(480, 235), '<text class="t" x="28" y="40">TOP LANGAGES</text>',
-           f'<rect x="28" y="50" width="60" height="2" rx="1" fill="url(#g)"/>']
-    langs = d["langs"][:6] if d else []
-    if not langs:
-        out.append(f'<text class="l" x="240" y="130" text-anchor="middle">En attente de la 1re mise à jour…</text>')
+    out = panel(480, 240, "cat langages.json", "Répartition des langages en pourcentage du code")
+    langs = d["langs"] if d else []
+    total = sum(size for _, size in langs)
+    shown = langs if len(langs) <= 5 else langs[:4] + [("Autres", sum(s for _, s in langs[4:]))]
+    out.append(rect(55, 62, 1, 159, TRACK))
+    if total:
+        # Format the file as a short editor listing, including the line numbers.
+        y = 114 if len(shown) == 1 else 79
+        rows = [label(72, y, "{", 19, MUTED)]
+        for i, (name, size) in enumerate(shown, 1):
+            row_y = y + i*22
+            key = name if len(name) <= 23 else name[:22] + "…"
+            comma = "," if i < len(shown) else ""
+            rows.append(label(91, row_y, f'"{key}":', 17, PINK2))
+            rows.append(label(450, row_y, f'"{100*size/total:.1f}%"{comma}', 17, TEXT, "end"))
+        rows.append(label(72, y + (len(shown)+1)*22, "}", 19, MUTED))
+        for i, row in enumerate(rows):
+            out.extend([label(40, y+i*22, i+1, 13, MUTED, "end"), row])
     else:
-        tot = sum(s for _, s in d["langs"]) or 1
-        for i, (name, size) in enumerate(langs):
-            y = 84 + i * 24
-            p = size / tot
-            w = max(4, 270 * p / (langs[0][1] / tot))
-            out.append(f'''<g opacity="0">{fade(i)}
-  <text class="l" x="28" y="{y}" style="fill:{TEXT}">{name}</text>
-  <rect x="140" y="{y-10}" width="270" height="9" rx="4.5" fill="{TRACK}"/>
-  <rect x="140" y="{y-10}" width="0" height="9" rx="4.5" fill="url(#g)">
-    <animate attributeName="width" from="0" to="{w:.1f}" dur="1.1s" begin="{i*0.12:.2f}s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/>
-  </rect>
-  <text class="s" x="452" y="{y}" text-anchor="end">{p*100:.1f}%</text></g>''')
-    out.append("</svg>")
-    return "\n".join(out)
+        out.append(label(72, 133, "Aucune donnée de langage", 16, MUTED))
+    return "\n".join(out + ["</svg>"])
 
 
 def card_activity(d):
-    W, H, x0, x1, yb, yt = 1000, 270, 50, 950, 215, 80
-    out = [head(W, H), '<text class="t" x="28" y="40">ACTIVITÉ — 30 DERNIERS JOURS</text>']
-    days = d["days"] if d and d["days"] else [(date.today().isoformat(), 0)] * 2
-    vals = [c for _, c in days]
-    vmax = max(max(vals), 4)
-    n = len(vals)
-    for k in range(5):
-        y = yt + (yb - yt) * k / 4
-        out.append(f'<line x1="{x0}" y1="{y:.1f}" x2="{x1}" y2="{y:.1f}" stroke="{PINK}" stroke-opacity="0.08"/>')
-        out.append(f'<text class="s" x="{x0-10}" y="{y+4:.1f}" text-anchor="end">{round(vmax*(1-k/4))}</text>')
-    pts = [(x0 + (x1 - x0) * i / (n - 1), yb - (yb - yt) * v / vmax) for i, v in enumerate(vals)]
-    p = f"M{pts[0][0]:.1f} {pts[0][1]:.1f}"
-    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
-        mx = (ax + bx) / 2
-        p += f" C{mx:.1f} {ay:.1f} {mx:.1f} {by:.1f} {bx:.1f} {by:.1f}"
-    out.append(f'<path d="{p} L{x1} {yb} L{x0} {yb}Z" fill="url(#ar)" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="1.2s" begin="0.6s" fill="freeze"/></path>')
-    out.append(f'<path d="{p}" pathLength="1" fill="none" stroke="{PINK}" stroke-width="3" stroke-linecap="round" stroke-dasharray="1" stroke-dashoffset="1" filter="url(#n)">'
-               f'<animate attributeName="stroke-dashoffset" from="1" to="0" dur="2s" fill="freeze"/></path>')
-    for i, ((x, y), v) in enumerate(zip(pts, vals)):
-        if v > 0:
-            out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.5" fill="{BG}" stroke="{PINK2}" stroke-width="2" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="{0.3+i*0.06:.2f}s" fill="freeze"/></circle>')
-    for idx in (0, n // 2, n - 1):
-        dt = days[idx][0]
-        out.append(f'<text class="s" x="{pts[idx][0]:.1f}" y="{yb+26}" text-anchor="middle">{dt[8:10]}/{dt[5:7]}</text>')
-    total = sum(vals) if d else None
-    out.append(f'<text class="s" x="{W-28}" y="40" text-anchor="end" style="fill:{PINK2}">{fmt(total)} CONTRIBUTIONS</text>')
-    if not d:
-        out.append(f'<text class="l" x="{W/2}" y="150" text-anchor="middle">En attente de la 1re mise à jour…</text>')
-    out.append("</svg>")
-    return "\n".join(out)
-
-
-def hexpath(cx, cy, r):
-    return "M" + " L".join(f"{cx + r*math.cos(math.radians(-90+60*k)):.1f} {cy + r*math.sin(math.radians(-90+60*k)):.1f}" for k in range(6)) + "Z"
+    out = panel(1000, 192, "./activité --jours 30", "Contributions sur les 30 derniers jours")
+    days = d["days"][-30:] if d else []
+    if days:
+        counts = [v for _, v in days]
+        out.append(label(976, 34, f"{fmt(sum(counts))} contributions", 16, PINK2, "end"))
+        peak = max(counts) or 1
+        for i, (day, count) in enumerate(days):
+            x = 24 + i*32
+            height = max(4, 66*count/peak)
+            out += [f'<g><title>{day} · {count}</title>', rect(x, 76, 21, 66, TRACK, 2),
+                    rect(x, 142-height, 21, height, PINK if count else "#514453", 2), '</g>']
+            if i in {0, 7, 14, 21, len(days)-1} and (i == len(days)-1 or len(days)-1-i >= 2):
+                out.append(label(x+10, 170, day[8:10]+"/"+day[5:7], 13, MUTED, "middle"))
+    else:
+        out.append(label(24, 118, "En attente de données", 17, MUTED))
+    return "\n".join(out + ["</svg>"])
 
 
 def card_badges(d):
-    items = [("COMMITS", "commits", [1, 50, 300]), ("PULL REQ.", "prs", [1, 5, 20]), ("REPOS", "repos", [1, 5, 15]),
-             ("ÉTOILES", "stars", [1, 5, 25]), ("FOLLOWERS", "followers", [1, 5, 20])]
-    W, H = 1000, 190
-    out = [head(W, H), '<text class="t" x="28" y="40">TROPHÉES</text>']
-    for i, (label, key, th) in enumerate(items):
-        cx, cy = 100 + i * 200, 95
-        v = d[key] if d else 0
-        tier = sum(v >= t for t in th)
-        on = tier > 0
-        stroke = "url(#g)" if on else "#2a2a32"
-        out.append(f'<g opacity="0">{fade(i, 0.15)}')
-        out.append(f'<path d="{hexpath(cx, cy, 40)}" fill="{PINK if on else "none"}" fill-opacity="0.08" stroke="{stroke}" stroke-width="3"' + (' filter="url(#n)"' if on else '') + '>')
-        if on:
-            out.append('<animate attributeName="stroke-opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>')
-        out.append('</path>')
-        out.append(f'<text x="{cx}" y="{cy+7}" text-anchor="middle" style="font:800 20px {SANS};fill:{TEXT if on else "#4a4a55"}">{fmt(v if d else None)}</text>')
-        out.append(f'<text class="s" x="{cx}" y="{cy+62}" text-anchor="middle" style="fill:{PINK2 if on else MUTED}">{label}</text>')
-        for k in range(3):
-            out.append(f'<circle cx="{cx-12+k*12}" cy="{cy+74}" r="3" fill="{PINK if k < tier else TRACK}"/>')
-        out.append('</g>')
-    out.append("</svg>")
-    return "\n".join(out)
+    out = panel(1000, 180, "./trophées", "Trophées et progression")
+    out.append(label(976, 34, "3 paliers par trophée", 14, MUTED, "end"))
+    items = [("Commits", "commits", (1, 50, 300)), ("Pull requests", "prs", (1, 5, 20)),
+             ("Dépôts", "repos", (1, 5, 15)), ("Étoiles", "stars", (1, 5, 25)),
+             ("Followers", "followers", (1, 5, 20))]
+    cup = "M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z"
+    for i, (name, key, thresholds) in enumerate(items):
+        x = 24 + i*192
+        v = d[key] if d else None
+        tier = sum(v >= t for t in thresholds) if d else 0
+        color = [MUTED, PINK2, PINK, "#d392ff"][tier]
+        out += [f'<path d="{cup}" transform="translate({x} 72) scale(2)" fill="{color}" fill-rule="evenodd"/>',
+                label(x+40, 99, fmt(v), 26, bold=True), label(x, 128, name, 15)]
+        for j in range(3):
+            out.append(rect(x+j*48, 147, 42, 5, color if j < tier else TRACK, 1))
+    return "\n".join(out + ["</svg>"])
 
 
 def main():

@@ -1,41 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="330" viewBox="0 0 800 330">
-<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#b517ff"/></linearGradient>
-<filter id="n" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<style>text{font-family:"Courier New",Consolas,monospace;font-size:17px}.blink{animation:bl 1s infinite steps(1)}@keyframes bl{0%,50%{opacity:1}51%,100%{opacity:0}}</style>
-<rect x="6" y="6" width="788" height="318" rx="14" fill="none" stroke="url(#b)" stroke-width="2" filter="url(#n)" opacity="0.8"/>
-<rect x="6" y="6" width="788" height="318" rx="14" fill="#0d0d10"/>
-<path d="M6 20a14 14 0 0 1 14-14h760a14 14 0 0 1 14 14v26H6z" fill="#17171c"/>
-<circle cx="32" cy="26" r="6" fill="#ff2e93"/><circle cx="54" cy="26" r="6" fill="#ff9be0"/><circle cx="76" cy="26" r="6" fill="#b517ff"/>
-<text x="400" y="32" text-anchor="middle" fill="#8a8a95" font-size="14">daabzfn@42: ~</text>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.040;0.055;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="30" y="80" fill="#ff2e93">&#10095;</text><text x="52" y="80" fill="#ffffff">whoami</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.125;0.140;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="52" y="106" fill="#e8e8ee">daabzfn</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.210;0.225;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="30" y="132" fill="#ff2e93">&#10095;</text><text x="52" y="132" fill="#ffffff">cat about.txt</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.295;0.310;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="52" y="158" fill="#e8e8ee">Learner dev @ 42 — cursus commun.</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.380;0.395;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="30" y="184" fill="#ff2e93">&#10095;</text><text x="52" y="184" fill="#ffffff">echo $ECOLE</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.465;0.480;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="52" y="210" fill="#e8e8ee">C • Python • Git • Linux</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.550;0.565;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="30" y="236" fill="#ff2e93">&#10095;</text><text x="52" y="236" fill="#ffffff">echo $PERSO</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.635;0.650;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="52" y="262" fill="#e8e8ee">TSX • HTML • CSS • TS • JS</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.720;0.735;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="30" y="288" fill="#ff2e93">&#10095;</text><text x="52" y="288" fill="#ffffff">status --now</text>
-</g>
-<g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.805;0.820;0.95;1" dur="16.0s" repeatCount="indefinite"/>
-<text x="52" y="314" fill="#ff2e93">● learning, breaking, fixing, repeat.</text>
-</g>
-<text class="blink" x="30" y="340" fill="#ff2e93">&#10095;</text><rect class="blink" x="52" y="325" width="10" height="19" fill="#ff2e93"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="168" viewBox="0 0 720 168" role="img" aria-labelledby="title intro">
+  <title id="title">À propos de Daabzfn</title>
+  <desc id="intro">Je suis en cursus commun à 42. J’y code surtout en C. À côté, je fais du web en TypeScript et JavaScript.</desc>
+  <rect x=".5" y=".5" width="719" height="167" rx="8" fill="#0d0d0f" stroke="#292831"/>
+  <g font-family="Consolas, monospace" font-size="19">
+    <text x="28" y="40" fill="#f1edf2"><tspan fill="#ff2e93">~ $ </tspan>cat moi.txt</text>
+    <g fill="#cdc9d1">
+      <text x="28" y="79">Je suis en cursus commun à 42. J’y code surtout en C.</text>
+      <text x="28" y="106">À côté, je fais du web en TypeScript et JavaScript.</text>
+    </g>
+    <text x="28" y="145" fill="#ff2e93">~ $</text>
+    <rect x="75" y="141" width="11" height="2" fill="#ff2e93"/>
+  </g>
 </svg>
