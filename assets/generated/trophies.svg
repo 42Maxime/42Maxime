@@ -8,7 +8,7 @@
 <rect x="24" y="50" width="952" height="1" rx="0" fill="#302c37"/>
 <text x="976" y="34" fill="#8a8a95" font-size="14" font-weight="400" text-anchor="end">3 tiers per trophy</text>
 <path d="M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z" transform="translate(24 72) scale(2)" fill="#ff9be0" fill-rule="evenodd"/>
-<text x="64" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">10</text>
+<text x="64" y="99" fill="#ffffff" font-size="26" font-weight="700" text-anchor="start">11</text>
 <text x="24" y="128" fill="#ffffff" font-size="15" font-weight="400" text-anchor="start">Commits</text>
 <rect x="24" y="147" width="42" height="5" rx="1" fill="#ff9be0"/>
 <rect x="72" y="147" width="42" height="5" rx="1" fill="#1c1c22"/>
