@@ -2,7 +2,7 @@
   <rect width="1000" height="250" rx="10" fill="#0d0d0f"/>
   <rect x="0.5" y="0.5" width="999" height="249" rx="10" fill="none" stroke="#25252d"/>
   <rect x="0" y="0" width="5" height="250" fill="#ff2e93"/>
-  <title>Terminal du projet C et extrait de code</title>
+  <title>C project terminal and code snippet</title>
   <g font-family="Consolas, monospace" font-size="17" fill="#dedce3">
     <text x="58" y="48"><tspan fill="#ff2e93">~/libft $</tspan> make -n -f Makefile</text>
     <text x="58" y="76" fill="#a9a7b3">make: 'libft.a' is up to date.</text>

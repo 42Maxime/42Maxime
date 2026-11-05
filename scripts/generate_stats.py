@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Génère les cartes SVG (stats, langages, activité, badges) depuis l'API GitHub.
+"""Generate SVG cards for stats, languages, activity, and trophies using the GitHub API.
 
-Usage :
-  GH_TOKEN=... GH_USER=Daabzfn python scripts/generate_stats.py
-  python scripts/generate_stats.py --empty   # cartes vides (placeholders)
-  python scripts/generate_stats.py --demo    # fausses données (test du rendu)
-Aucune dépendance externe (stdlib uniquement).
+Usage:
+  GH_TOKEN=... GH_USER=42Maxime python scripts/generate_stats.py
+  python scripts/generate_stats.py --empty   # empty placeholder cards
+  python scripts/generate_stats.py --demo    # sample data for previewing the cards
+Uses only the Python standard library.
 """
 from xml.sax.saxutils import escape
 import json, os, sys, urllib.request
@@ -104,11 +104,11 @@ def fmt(v):
 
 
 def card_stats(d):
-    out = panel(480, 240, "cat stats.c", "Statistiques GitHub")
-    out.extend([label(24, 76, "t_profil", 18, PINK2),
+    out = panel(480, 240, "cat stats.c", "GitHub statistics")
+    out.extend([label(24, 76, "t_profile", 18, PINK2),
                 label(125, 76, "github = {", 18)])
     fields = [("commits", "commits"), ("pull_requests", "prs"), ("issues", "issues"),
-              ("repos_publics", "repos"), ("etoiles", "stars"), ("followers", "followers")]
+              ("public_repos", "repos"), ("stars", "stars"), ("followers", "followers")]
     for i, (field, key) in enumerate(fields):
         y = 100 + i*21
         value = str(d[key]) if d else "?"
@@ -116,16 +116,16 @@ def card_stats(d):
                     label(211, y, "=", 17, MUTED),
                     label(239, y, value + ",", 17, PINK2, bold=True)])
         if i in (0, 3):
-            out.append(label(337, y, "/* 12 mois */" if i == 0 else "/* profil */", 14, MUTED))
+            out.append(label(337, y, "/* 12 months */" if i == 0 else "/* profile */", 14, MUTED))
     out.append(label(24, 229, "};", 18))
     return "\n".join(out + ["</svg>"])
 
 
 def card_langs(d):
-    out = panel(480, 240, "cat langages.json", "Répartition des langages en pourcentage du code")
+    out = panel(480, 240, "cat languages.json", "Language share by code size")
     langs = d["langs"] if d else []
     total = sum(size for _, size in langs)
-    shown = langs if len(langs) <= 5 else langs[:4] + [("Autres", sum(s for _, s in langs[4:]))]
+    shown = langs if len(langs) <= 5 else langs[:4] + [("Other", sum(s for _, s in langs[4:]))]
     out.append(rect(55, 62, 1, 159, TRACK))
     if total:
         # Format the file as a short editor listing, including the line numbers.
@@ -141,12 +141,12 @@ def card_langs(d):
         for i, row in enumerate(rows):
             out.extend([label(40, y+i*22, i+1, 13, MUTED, "end"), row])
     else:
-        out.append(label(72, 133, "Aucune donnée de langage", 16, MUTED))
+        out.append(label(72, 133, "No language data", 16, MUTED))
     return "\n".join(out + ["</svg>"])
 
 
 def card_activity(d):
-    out = panel(1000, 192, "./activité --jours 30", "Contributions sur les 30 derniers jours")
+    out = panel(1000, 192, "./activity --days 30", "Contributions in the last 30 days")
     days = d["days"][-30:] if d else []
     if days:
         counts = [v for _, v in days]
@@ -160,15 +160,15 @@ def card_activity(d):
             if i in {0, 7, 14, 21, len(days)-1} and (i == len(days)-1 or len(days)-1-i >= 2):
                 out.append(label(x+10, 170, day[8:10]+"/"+day[5:7], 13, MUTED, "middle"))
     else:
-        out.append(label(24, 118, "En attente de données", 17, MUTED))
+        out.append(label(24, 118, "Waiting for data", 17, MUTED))
     return "\n".join(out + ["</svg>"])
 
 
 def card_badges(d):
-    out = panel(1000, 180, "./trophées", "Trophées et progression")
-    out.append(label(976, 34, "3 paliers par trophée", 14, MUTED, "end"))
+    out = panel(1000, 180, "./trophies", "Trophies and progress")
+    out.append(label(976, 34, "3 tiers per trophy", 14, MUTED, "end"))
     items = [("Commits", "commits", (1, 50, 300)), ("Pull requests", "prs", (1, 5, 20)),
-             ("Dépôts", "repos", (1, 5, 15)), ("Étoiles", "stars", (1, 5, 25)),
+             ("Repos", "repos", (1, 5, 15)), ("Stars", "stars", (1, 5, 25)),
              ("Followers", "followers", (1, 5, 20))]
     cup = "M2 0h10v2h2v4h-2v2h-2v2H8v2h3v2H3v-2h3v-2H4V8H2V6H0V2h2z M2 3v2h1V3z M11 3v2h1V3z"
     for i, (name, key, thresholds) in enumerate(items):
@@ -184,7 +184,7 @@ def card_badges(d):
 
 
 def main():
-    user = os.environ.get("GH_USER", "Daabzfn")
+    user = os.environ.get("GH_USER", "42Maxime")
     if "--empty" in sys.argv:
         d = None
     elif "--demo" in sys.argv:
@@ -192,7 +192,7 @@ def main():
     else:
         token = os.environ.get("GH_TOKEN")
         if not token:
-            raise SystemExit("GH_TOKEN manquant")
+            raise SystemExit("GH_TOKEN is missing")
         d = fetch(user, token)
     os.makedirs(OUT, exist_ok=True)
     for name, fn in (("stats", card_stats), ("langs", card_langs), ("activity", card_activity), ("trophies", card_badges)):

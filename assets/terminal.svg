@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="168" viewBox="0 0 720 168" role="img" aria-labelledby="title intro">
-  <title id="title">À propos de Daabzfn</title>
-  <desc id="intro">Je suis en cursus commun à 42. J’y code surtout en C. À côté, je fais du web en TypeScript et JavaScript.</desc>
+  <title id="title">About 42Maxime</title>
+  <desc id="intro">I'm in the Common Core at 42, where I mostly write C. On the side, I build websites with TypeScript and JavaScript.</desc>
   <rect x=".5" y=".5" width="719" height="167" rx="8" fill="#0d0d0f" stroke="#292831"/>
   <g font-family="Consolas, monospace" font-size="19">
-    <text x="28" y="40" fill="#f1edf2"><tspan fill="#ff2e93">~ $ </tspan>cat moi.txt</text>
+    <text x="28" y="40" fill="#f1edf2"><tspan fill="#ff2e93">~ $ </tspan>cat about.txt</text>
     <g fill="#cdc9d1">
-      <text x="28" y="79">Je suis en cursus commun à 42. J’y code surtout en C.</text>
-      <text x="28" y="106">À côté, je fais du web en TypeScript et JavaScript.</text>
+      <text x="28" y="79">I'm in the Common Core at 42, where I mostly write C.</text>
+      <text x="28" y="106">On the side, I build websites with TypeScript and JavaScript.</text>
     </g>
     <text x="28" y="145" fill="#ff2e93">~ $</text>
     <rect x="75" y="141" width="11" height="2" fill="#ff2e93"/>
