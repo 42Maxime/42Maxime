@@ -1,50 +1,75 @@
 <div align="center">
 
-# Daabzfn
+<img src="assets/profile-header.svg" alt="Daabzfn — 42 Student, Perpignan" width="100%">
 
-**Developer · Backend & Software Engineering**
+<br>
 
-Building projects, learning by doing, and turning ideas into code.
-
-[![Website](https://img.shields.io/badge/Website-dev--maxime.xyz-18181b?style=flat-square&logo=googlechrome&logoColor=white)](https://dev-maxime.xyz)
-[![X](https://img.shields.io/badge/X-@maximeq__-18181b?style=flat-square&logo=x&logoColor=white)](https://x.com/maximeq__)
+[![42](https://img.shields.io/badge/42-Student-111827?style=flat-square&logo=42&logoColor=white)](https://42.fr/)
+[![Location](https://img.shields.io/badge/Location-Perpignan%2C%20France-111827?style=flat-square&logo=googlemaps&logoColor=white)](https://www.google.com/maps/search/?api=1&query=42+Perpignan)
+[![GitHub](https://img.shields.io/badge/GitHub-Daabzfn-111827?style=flat-square&logo=github&logoColor=white)](https://github.com/Daabzfn)
 
 </div>
 
 ---
 
-### About
+## `01` — About
 
-I'm interested in software engineering, backend development and building useful tools. I enjoy working on personal projects, exploring new technologies and understanding how things work under the hood.
+I'm a student at **42 Perpignan**, currently working through **Milestone 1** of the Common Core.
 
-Currently focusing on strengthening my programming fundamentals, especially in **C**.
+My main focus right now is learning C, strengthening my programming fundamentals, and getting comfortable with problem-solving.
 
-### Technologies
+Beyond the 42 curriculum, I'm especially interested in **cybersecurity** and **full-stack web development** — two areas I'd like to explore more deeply.
+
+## `02` — 42 Common Core
+
+<details open>
+<summary><strong>Milestone 1 · Current milestone</strong> — 2 validated / 4 tracked projects</summary>
+
+<br>
+
+| Project | Status | Result |
+|:--|:--:|:--:|
+| **libft** | <img src="https://img.shields.io/badge/VALIDATED-238636?style=flat-square" alt="Validated"> | **100%** |
+| **ft_printf** | <img src="https://img.shields.io/badge/VALIDATED-238636?style=flat-square" alt="Validated"> | **100%** |
+| **get_next_line** | <img src="https://img.shields.io/badge/IN%20PROGRESS-D29922?style=flat-square" alt="In progress"> | In progress |
+| **push_swap** *(duo)* | <img src="https://img.shields.io/badge/IN%20PROGRESS-D29922?style=flat-square" alt="In progress"> | In progress |
+
+**Tracked projects: 2 / 4 validated**
+
+</details>
+
+<details>
+<summary><strong>Milestones 2+</strong> — Upcoming</summary>
+
+Not started yet. I'll update this section as I progress through the Common Core.
+
+</details>
+
+<sub>Progress shown here covers only the four projects listed above, not the overall completion percentage of Milestone 1 or the full 42 curriculum.</sub>
+
+## `03` — Tools & learning
 
 <div align="center">
 
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=222)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Express](https://img.shields.io/badge/Express-444444?style=flat-square&logo=express&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+<img src="https://img.shields.io/badge/Python-learning-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python — learning">
 
 </div>
 
-### GitHub activity
+- **Currently using:** C and Git.
+- **Next to explore:** Python.
+- **Personal interests:** cybersecurity, web development and full-stack engineering.
 
-<div align="center">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=Daabzfn&show_icons=true&hide_border=true&theme=github_dark&rank_icon=github" alt="GitHub statistics" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Daabzfn&layout=compact&hide_border=true&theme=github_dark" alt="Most used languages" />
-</div>
-
----
+## `04` — Find me
 
 <div align="center">
 
-*Thanks for stopping by.*
+[![Website](https://img.shields.io/badge/Website-dev--maxime.xyz-E5484D?style=for-the-badge&logo=googlechrome&logoColor=white)](https://dev-maxime.xyz)
+[![X](https://img.shields.io/badge/X-@maximeq__-111827?style=for-the-badge&logo=x&logoColor=white)](https://x.com/maximeq__)
+
+<br>
+
+<sub>Learning in public. One project at a time.</sub>
 
 </div>
