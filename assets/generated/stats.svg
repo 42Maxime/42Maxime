@@ -10,7 +10,7 @@
 <text x="125" y="76" fill="#ffffff" font-size="18" font-weight="400" text-anchor="start">github = {</text>
 <text x="48" y="100" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">.commits</text>
 <text x="211" y="100" fill="#8a8a95" font-size="17" font-weight="400" text-anchor="start">=</text>
-<text x="239" y="100" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">11,</text>
+<text x="239" y="100" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">13,</text>
 <text x="337" y="100" fill="#8a8a95" font-size="14" font-weight="400" text-anchor="start">/* 12 months */</text>
 <text x="48" y="121" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">.pull_requests</text>
 <text x="211" y="121" fill="#8a8a95" font-size="17" font-weight="400" text-anchor="start">=</text>
@@ -20,11 +20,11 @@
 <text x="239" y="142" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">0,</text>
 <text x="48" y="163" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">.public_repos</text>
 <text x="211" y="163" fill="#8a8a95" font-size="17" font-weight="400" text-anchor="start">=</text>
-<text x="239" y="163" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">2,</text>
+<text x="239" y="163" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">3,</text>
 <text x="337" y="163" fill="#8a8a95" font-size="14" font-weight="400" text-anchor="start">/* profile */</text>
 <text x="48" y="184" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">.stars</text>
 <text x="211" y="184" fill="#8a8a95" font-size="17" font-weight="400" text-anchor="start">=</text>
-<text x="239" y="184" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">0,</text>
+<text x="239" y="184" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">1,</text>
 <text x="48" y="205" fill="#ffffff" font-size="17" font-weight="400" text-anchor="start">.followers</text>
 <text x="211" y="205" fill="#8a8a95" font-size="17" font-weight="400" text-anchor="start">=</text>
 <text x="239" y="205" fill="#ff9be0" font-size="17" font-weight="700" text-anchor="start">0,</text>
