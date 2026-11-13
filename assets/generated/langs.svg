@@ -12,15 +12,15 @@
 <text x="40" y="101" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">2</text>
 <text x="91" y="101" fill="#ff9be0" font-size="17" font-weight="400" text-anchor="start">"C":</text>
 <text x="40" y="123" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">3</text>
-<text x="450" y="101" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"58.6%",</text>
+<text x="450" y="101" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"69.5%",</text>
 <text x="40" y="145" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">4</text>
 <text x="91" y="123" fill="#ff9be0" font-size="17" font-weight="400" text-anchor="start">"Python":</text>
 <text x="40" y="167" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">5</text>
-<text x="450" y="123" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"40.2%",</text>
+<text x="450" y="123" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"29.6%",</text>
 <text x="40" y="189" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">6</text>
 <text x="91" y="145" fill="#ff9be0" font-size="17" font-weight="400" text-anchor="start">"Makefile":</text>
 <text x="40" y="211" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">7</text>
-<text x="450" y="145" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"1.2%"</text>
+<text x="450" y="145" fill="#ffffff" font-size="17" font-weight="400" text-anchor="end">"0.9%"</text>
 <text x="40" y="233" fill="#8a8a95" font-size="13" font-weight="400" text-anchor="end">8</text>
 <text x="72" y="167" fill="#8a8a95" font-size="19" font-weight="400" text-anchor="start">}</text>
 </svg>
